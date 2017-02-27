@@ -1,0 +1,7 @@
+[
+		{ 
+		"button": "button3", 
+		"command": "insert_snippet",
+		 "args": { "name": "Packages/XML/Snippets/long-tag.sublime-snippet" } 
+		},
+]

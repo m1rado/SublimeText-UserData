@@ -1,0 +1,18 @@
+[
+	 //// Auto close tags
+ 	//{ "keys": [">"], "command": "auto_close_tag", "args": { "prefix": ">"}, "context":
+ 	//[
+			//{ "key": "selector", "operator": "equal", "operand": "text.html meta.tag -string -punctuation.definition.tag.begin.html -meta.scope.between-tag-pair.html, text.xml meta.tag -string -punctuation.definition.tag.begin.xml -meta.scope.between-tag-pair.xml", "match_all": true },
+			//{ "key": "preceding_text", "operator": "not_regex_contains", "operand": "(?:\\<(?:img|br|hr|meta|link|base|input)\\>^<]*)|/$" }
+		//]
+	//},
+	// Alt+, for tag
+	{ "keys": ["alt+,"], "command": "insert_snippet", "args": { "name": "Packages/XML/long-tag.sublime-snippet" } },
+	// Line and Tab when hitting enter between tags	
+	{ "keys": ["enter"], "command": "insert_snippet", "args": {"contents": "\n\t$0\n"}, "context":
+	[
+			{ "key": "setting.auto_indent", "operator": "equal", "operand": true},
+			{ "key": "selector", "operator": "equal", "operand": "meta.scope.between-tag-pair"}
+		]
+	}
+]
